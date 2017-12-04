@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    We are using Node.js <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+    <img src="https://dailygeekshow.com/wp-content/uploads/sites/2/2016/02/bob-%C3%A9ponge-anecdote-long%C3%A9vit%C3%A9.jpg"/>
+    <div id="heure"></div>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+      require('devtron').install()
+      
+      window.onload=function(){
+        heure('heure');
+      }
+
+      setInterval(function() { document.getElementById('heure').innerHTML = new Date(); }, 1000); 
+        
+    </script>
+
+
+  </body>
+</html>
